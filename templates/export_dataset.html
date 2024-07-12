@@ -1,0 +1,139 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Dataset Ayıklama / Temizleme
+{% endblock %}
+
+{% block head %}
+<style>
+    table {
+        border-collapse: collapse;
+        border-style: hidden; /* hide standard table (collapsed) border */
+        box-shadow: 0 0 0 1px #666; /* this draws the table border  */
+    }
+
+    td {
+        border: 1px solid #ccc;
+    }
+</style>
+{% endblock %}
+
+{% block username %}
+    {{ session_user['name'] }}
+{% endblock %}
+
+{% block content %}
+<div class="mt-10 mx-auto flex items-center justify-center h-[300px] max-w-[500px]">
+    <table class="min-w-full divide-y divide-gray-200 rounded-lg">
+        <thead class="bg-gray-50">
+            <tr>
+                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                    Sadece Temizlenmiş Veri Setleri
+                </th>
+                <th scope="col" class="relative px-6 py-3">
+                    <span class="sr-only">
+                        <a href="#">
+                            <button class="text-gray-500">
+                                CSV
+                            </button>
+                        </a>
+                    </span>
+                </th>
+                <th scope="col" class="relative px-6 py-3">
+                    <span class="sr-only">
+                        <a href="#">
+                            <button>
+                                EXCEL
+                            </button>
+                        </a>
+                    </span>
+                </th>
+            </tr>
+
+        </thead>
+        <tbody class="bg-white divide-y divide-gray-200">
+
+            {% for file in files %}
+            <tr>
+                <td class="px-12 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                    {{ file }}
+                </td>
+                <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                    <a href="/exportData/csv/{{ file }}">
+                        <button style="border-radius: 20px;"
+                        class="border-1 border-black px-4 py-2 text-slate-50 hover:text-slate-200 bg-indigo-600 hover:bg-indigo-900">
+                            CSV
+                        </button>
+                    </a>
+                </td>
+                <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                    <a href="/exportData/xlsx/{{ file }}">
+                        <button style="border-radius: 20px;"
+                        class="border-1 border-black px-4 py-2 text-slate-50 hover:text-slate-200 bg-green-600 hover:bg-green-900">
+                            EXCEL
+                        </button>
+                    </a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+<div class="mx-auto flex items-center justify-center h-[300px] max-w-[500px]">
+    <table class="min-w-full divide-y divide-gray-200 rounded-lg">
+        <thead class="bg-gray-50">
+            <tr>
+                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                    Etiketlenmiş Hazırlanan Veri Setleri
+                </th>
+                <th scope="col" class="relative px-6 py-3">
+                    <span class="sr-only">
+                        <a href="#">
+                            <button class="text-gray-500">
+                                JSON
+                            </button>
+                        </a>
+                    </span>
+                </th>
+                <th scope="col" class="relative px-6 py-3">
+                    <span class="sr-only">
+                        <a href="#">
+                            <button class="text-gray-500">
+                                CSV
+                            </button>
+                        </a>
+                    </span>
+                </th>
+            </tr>
+
+        </thead>
+        <tbody class="bg-white divide-y divide-gray-200">
+            {% for file in json_files %}
+            <tr>
+                <td class="px-12 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                    {{ file }}
+                </td>
+                <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                    <a href="/exportData/json/{{ file }}">
+                        <button style="border-radius: 20px;"
+                            class="border-1 border-black bg-yellow-400 hover:bg-yellow-600 p-2 px-4 text-slate-50 hover:text-slate-200">
+                            JSON
+                        </button>
+                    </a>
+                </td>
+                <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                    <a href="/exportData/jsontocsv/{{ file }}">
+                        <button style="border-radius: 20px;"
+                        class="border-1 border-black px-4 py-2 text-slate-50 hover:text-slate-200 bg-indigo-600 hover:bg-indigo-900">
+                            CSV
+                        </button>
+                    </a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}
+
+

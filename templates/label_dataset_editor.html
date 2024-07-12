@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Dataset Etiketleme
+{% endblock %}
+
+{% block head %}
+<style>
+    html { height: 100%;}
+    body { background: linear-gradient(#0a2904, #42a82d); }
+    .tag-firma {
+        background-color: #3b82f6; /* Blue-500 */
+        color: white;
+    }
+    .tag-pozitif {
+        background-color: #10b981; /* Green-500 */
+        color: white;
+    }
+    .tag-notr {
+        background-color: #6b7280; /* Gray-500 */
+        color: white;
+    }
+    .tag-negatif {
+        background-color: #ef4444; /* Red-500 */
+        color: white;
+    }
+
+    * { user-select: none; }
+    #text-container { height: 600px; overflow-y: auto; user-select: text;}
+    .selectable { user-select: text; }
+    .text-page > span {
+        user-select: text;
+    }
+</style>
+{% endblock %}
+
+{% block username %}
+    {{ session_user['name'] }}
+{% endblock %}
+
+{% block content %}
+<div class="container mx-auto">
+    
+    <h1 class="text-white text-3xl font-bold mt-3 mb-4">
+    <span>
+        <a href="/annotateDate">
+            <button class="cursor-pointer border-1 border-black bg-green-500 text-white px-4 py-2 rounded">
+                &larr;
+            </button>
+        </a>
+    </span> Veri Etiketleme - <span id="filename">{{ filename }}</span></h1>
+    <div id="tags" class="mb-4">
+      <button onclick="setTag('FIRMA')" class="bg-blue-500 text-white px-4 py-2 rounded mr-2">FIRMA</button>
+      <button onclick="setTag('POZITIF')" class="bg-green-500 text-white px-4 py-2 rounded mr-2">POZITIF</button>
+      <button onclick="setTag('NOTR')" class="bg-gray-500 text-white px-4 py-2 rounded mr-2">NOTR</button>
+      <button onclick="setTag('NEGATIF')" class="bg-red-500 text-white px-4 py-2 rounded">NEGATIF</button>
+    </div>
+    <div class="mt-4">
+    <div id="progress-container" class="w-full bg-gray-200 rounded-full h-4">
+        <div id="progress-bar" class="bg-blue-500 h-4 rounded-full" style="width: 0;"></div>
+    </div>
+    <div id="progress-text" class="text-white font-bold text-center mt-2">Sayfa 1 / X</div>
+    </div>
+    <div id="text-container" class="bg-white p-4 border rounded">
+      <!-- Multiple text pages -->
+      {% for data in dataset %}  
+      <div class="selectable text-page hidden text-xl" id="page-{{ data['id']}}" data-page="{{ data['id']}}">
+        {{ data['text'].replace('\n', '').replace('\\n', '') }}
+      </div>
+      {% endfor %}
+    </div>
+    <div class="mt-4">
+        <label for="pageInput" class="text-white mr-2">Sayfa: </label>
+        <input type="number" id="pageInput" min="1" class="mr-2 w-16 border rounded px-2 py-1">
+        <button onclick="gotoPage()" class="bg-gray-500 text-white px-4 py-2 rounded">Git</button>
+        <button onclick="prevPage()" class="bg-gray-500 text-white px-4 py-2 rounded mr-2">Geri</button>
+        <button onclick="nextPage()" class="bg-gray-500 text-white px-4 py-2 rounded mr-10">İleri</button>
+        <button onclick="setTag('')" id="selected-tag-btn" class="cursor-normal bg-gray-500 text-white px-4 py-2 rounded mr-2">Seçili Tag: YOK!</button>
+        <button onclick="resetForCurrentPage()" class="bg-gray-500 text-white px-4 py-2 rounded">Bu sayfa için seçilenleri sıfırla.</button>
+        <button onclick="deletePage()" class="bg-red-500 text-white px-4 py-2 rounded ml-8">Sayfayı sil</button>
+        <button onclick="exportSelectedDataAsJSON()" class="bg-indigo-500 text-white px-4 py-2 rounded mt-4">JSON olarak dışa aktar.</button>
+    </div>
+</div>
+
+<script src="/static/js/label_dataset_editor.js"></script>
+{% endblock %}
+

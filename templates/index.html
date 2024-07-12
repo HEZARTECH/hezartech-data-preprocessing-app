@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Ana Sayfa
+{% endblock %}
+
+{% block head %}
+{% endblock %}
+
+{% block username %}
+    {{ session_user['name'] }}
+{% endblock %}
+
+{% block content %}
+<div class="mt-10 poppins-regular text-white"
+style="
+border: 1px solid white;
+border-radius: 20px;
+padding: 20px;
+font-size: 20px; margin-left: 20%; margin-right: 20%;
+">
+    <span>Selam,</span><span class="underline ml-2 font-bold">{{ session_user['name'] }}</span><span class="font-bold">!</span>
+    <br>
+    <span>Hezarfen Veriseti Ön İşleme Sistemine Hoş Geldin!</span>
+</div>
+
+<div class="flex items-start mt-10 poppins-regular text-white"
+style="
+border: 1px solid white;
+border-radius: 20px;
+padding: 20px;
+font-size: 20px; margin-left: 20%; margin-right: 20%;
+">
+    <span>Menü üzerinden <b><u>verisetlerinizi düzenleyebilirsiniz</u></b>!</span>
+</div>
+{% endblock %}

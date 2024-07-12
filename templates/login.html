@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Giriş Yap
+{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" href="/static/css/login.css"/>
+{% endblock %}
+
+{% block content %}
+<div class="login-box">
+    <h2>{{project_name}} Giriş Formu</h2>
+    <br>
+    <form action="/login" method="POST" autocomplete="off">
+        <div class="user-box">
+            <input type="email" name="email" placeholder="Kullanıcı E-mail" required="">
+        </div>
+        <div class="user-box">
+            <input type="password" name="password" placeholder="Şifre" required="">
+        </div>
+        <a href="#">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <input type="submit" value="Giriş yap!"/>
+        </a>
+    </form>
+</div>
+{% endblock %}

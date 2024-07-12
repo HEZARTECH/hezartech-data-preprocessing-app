@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %} - HEZARTECH</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.0.2/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <style>
+        .poppins-thin {
+            font-family: "Poppins", sans-serif;
+            font-weight: 100;
+            font-style: normal;
+        }
+
+        .poppins-extralight {
+            font-family: "Poppins", sans-serif;
+            font-weight: 200;
+            font-style: normal;
+        }
+
+        .poppins-light {
+            font-family: "Poppins", sans-serif;
+            font-weight: 300;
+            font-style: normal;
+        }
+
+        .poppins-regular {
+            font-family: "Poppins", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        .poppins-medium {
+            font-family: "Poppins", sans-serif;
+            font-weight: 500;
+            font-style: normal;
+        }
+
+        .poppins-semibold {
+            font-family: "Poppins", sans-serif;
+            font-weight: 600;
+            font-style: normal;
+        }
+
+        .poppins-bold {
+            font-family: "Poppins", sans-serif;
+            font-weight: 700;
+            font-style: normal;
+        }
+
+        .poppins-extrabold {
+            font-family: "Poppins", sans-serif;
+            font-weight: 800;
+            font-style: normal;
+        }
+
+        .poppins-black {
+            font-family: "Poppins", sans-serif;
+            font-weight: 900;
+            font-style: normal;
+        }
+
+        .poppins-thin-italic {
+            font-family: "Poppins", sans-serif;
+            font-weight: 100;
+            font-style: italic;
+        }
+
+        .poppins-extralight-italic {
+            font-family: "Poppins", sans-serif;
+            font-weight: 200;
+            font-style: italic;
+        }
+
+        .poppins-light-italic {
+            font-family: "Poppins", sans-serif;
+            font-weight: 300;
+            font-style: italic;
+        }
+
+        .poppins-regular-italic {
+            font-family: "Poppins", sans-serif;
+            font-weight: 400;
+            font-style: italic;
+        }
+
+        .poppins-medium-italic {
+            font-family: "Poppins", sans-serif;
+            font-weight: 500;
+            font-style: italic;
+        }
+
+        .poppins-semibold-italic {
+            font-family: "Poppins", sans-serif;
+            font-weight: 600;
+            font-style: italic;
+        }
+
+        .poppins-bold-italic {
+            font-family: "Poppins", sans-serif;
+            font-weight: 700;
+            font-style: italic;
+        }
+
+        .poppins-extrabold-italic {
+            font-family: "Poppins", sans-serif;
+            font-weight: 800;
+            font-style: italic;
+        }
+
+        .poppins-black-italic {
+            font-family: "Poppins", sans-serif;
+            font-weight: 900;
+            font-style: italic;
+        }
+    </style>
+    <style>
+        html { height: 100%;}
+        body { background: linear-gradient(#0a2904, #42a82d); }
+    </style>
+    {% block head %}{% endblock %}
+</head>
+
+<body>
+    <section class="content">
+        <header>
+            <nav class="bg-gray-800">
+                <div class="!max-w-7xl !mx-auto px-4 !sm:px-6 !lg:px-8">
+                    <div class="flex items-center justify-between h-16">
+                        <div class="flex items-center">
+                            <div class="hidden md:block">
+                                <div class="ml-10 flex items-start space-x-4">
+                                    <a href="/" class="block cursor-pointer">
+                                        <img class="border-1 border-transparent rounded-md cursor-pointer" width="150px"
+                                            height="75px" src="/static/HEZARTECH_HORIZONTAL.png" alt="HEZARTECH"
+                                            class="w-8 h-8">
+                                    </a>
+                                    <a href="/" id="homepage"
+                                        class="cursor-pointer text-gray-300 text-white px-3 py-2 rounded-md text-sm font-medium">Ana
+                                        Sayfa</a>
+                                    <a href="/uploadData" id="uploadpage"
+                                        class="cursor-pointer text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Veriseti Yükle</a>
+                                    <a href="/annotateData" id="labelpage"
+                                        class="cursor-pointer text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Veriseti Etiketle</a>
+                                    <a href="/cleanData" id="cleanpage"
+                                        class="cursor-pointer text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Verisetini Ayıkla/Temizle</a>
+                                    <a href="/exportData" id="exportpage"
+                                        class="cursor-pointer text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Verisetini Dışa Aktar</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="hidden md:block">
+                            <div class="ml-4 flex items-center md:ml-6">
+                                <a>
+                                    <button
+                                        class="p-1 border-2 border-transparent text-gray-400 rounded-full hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
+                                        <span class="font-bold">{% block username %}{% endblock %}</span>
+                                    </button>
+                                </a>
+                                <!-- Profile dropdown -->
+                                <div class="ml-3 relative">
+                                    <div>
+                                        <button
+                                            class="max-w-xs bg-gray-800 rounded-full flex items-center text-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
+                                            id="user-menu-button" aria-expanded="false" aria-haspopup="true">
+                                            <span class="sr-only">Open user menu</span>
+                                            <?xml version="1.0" encoding="utf-8"?>
+                                            <!-- License: MIT. Made by Gitlab: https://gitlab.com/gitlab-org/gitlab-svgs?ref=iconduck.com -->
+                                            <svg width="40px" height="40px" viewBox="0 0 16 16"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path fill="#ffffff" fill-rule="evenodd"
+                                                    d="M8,16 C12.4183,16 16,12.4183 16,8 C16,3.58172 12.4183,0 8,0 C3.58172,0 0,3.58172 0,8 C0,12.4183 3.58172,16 8,16 Z M12.9533,11.387 C13.6137,10.4231 14,9.25665 14,8 C14,4.68629 11.3137,2 8,2 C4.68629,2 2,4.68629 2,8 C2,9.25665 2.38632,10.4231 3.04668,11.387 C3.25368,10.0411 4.13147,8.91649 5.32791,8.36519 C5.11827,7.95568 5,7.49165 5,7 C5,5.34315 6.34315,4 8,4 C9.65685,4 11,5.34315 11,7 C11,7.49165 10.8817,7.95568 10.6721,8.36519 C11.8685,8.91649 12.7463,10.0411 12.9533,11.387 Z M11,13.1973 L11,12 C11,10.8954 10.1046,10 9,10 L7,10 C5.89543,10 5,10.8954 5,12 L5,13.1973 C5.88252,13.7078 6.90714,14 8,14 C9.09286,14 10.1175,13.7078 11,13.1973 Z M8,8 C8.55228,8 9,7.55228 9,7 C9,6.44772 8.55228,6 8,6 C7.44772,6 7,6.44772 7,7 C7,7.55228 7.44772,8 8,8 Z" />
+                                            </svg>
+                                        </button>
+                                    </div>
+
+                                    <div id="dropdown"
+                                        class="hidden origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5"
+                                        role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button"
+                                        tabindex="-1">
+                                        <div class="py-1" role="none">
+                                            <!-- Active: "bg-gray-100", Not Active: "" -->
+                                            <a href="/exportData" class="flex items-start block px-4 py-2 text-sm text-gray-700"
+                                                role="menuitem" tabindex="-1" id="user-menu-item-1">
+                                                <svg fill="#000000" width="20px" height="20px" viewBox="0 0 24 24"
+                                                    id="settings" data-name="Line Color"
+                                                    xmlns="http://www.w3.org/2000/svg" class="icon line-color">
+                                                    <circle id="secondary" cx="12" cy="12" r="3"
+                                                        style="fill: none; stroke: rgb(44, 169, 188); stroke-linecap: round; stroke-linejoin: round; stroke-width: 2;">
+                                                    </circle>
+                                                    <path id="primary"
+                                                        d="M20,10h-.59a1,1,0,0,1-.94-.67v0a1,1,0,0,1,.2-1.14l.41-.41a1,1,0,0,0,0-1.42L17.66,4.93a1,1,0,0,0-1.42,0l-.41.41a1,1,0,0,1-1.14.2h0A1,1,0,0,1,14,4.59V4a1,1,0,0,0-1-1H11a1,1,0,0,0-1,1v.59a1,1,0,0,1-.67.94h0a1,1,0,0,1-1.14-.2l-.41-.41a1,1,0,0,0-1.42,0L4.93,6.34a1,1,0,0,0,0,1.42l.41.41a1,1,0,0,1,.2,1.14v0a1,1,0,0,1-.94.67H4a1,1,0,0,0-1,1v2a1,1,0,0,0,1,1h.59a1,1,0,0,1,.94.67v0a1,1,0,0,1-.2,1.14l-.41.41a1,1,0,0,0,0,1.42l1.41,1.41a1,1,0,0,0,1.42,0l.41-.41a1,1,0,0,1,1.14-.2h0a1,1,0,0,1,.67.94V20a1,1,0,0,0,1,1h2a1,1,0,0,0,1-1v-.59a1,1,0,0,1,.67-.94h0a1,1,0,0,1,1.14.2l.41.41a1,1,0,0,0,1.42,0l1.41-1.41a1,1,0,0,0,0-1.42l-.41-.41a1,1,0,0,1-.2-1.14v0a1,1,0,0,1,.94-.67H20a1,1,0,0,0,1-1V11A1,1,0,0,0,20,10Z"
+                                                        style="fill: none; stroke: rgb(0, 0, 0); stroke-linecap: round; stroke-linejoin: round; stroke-width: 2;">
+                                                    </path>
+                                                </svg>
+                                                <span class="font-bold pl-2">Veriseti Dışa Aktar</span>
+                                            </a>
+                                            <a href="/logout"
+                                                class="flex items-start i block px-4 py-2 text-sm text-gray-700"
+                                                role="menuitem" tabindex="-1" id="user-menu-item-2">
+                                                <svg width="20px" height="20px" viewBox="0 0 15 15" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M13.5 7.5L10.5 10.75M13.5 7.5L10.5 4.5M13.5 7.5L4 7.5M8 13.5H1.5L1.5 1.5L8 1.5"
+                                                        stroke="#000000" />
+                                                </svg>
+                                                <span class="font-bold pl-2">Çıkış</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mobile menu, show/hide -->
+<!--
+                <div class="md:hidden">
+                    <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                        <a href="#"
+                            class="bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium">Home</a>
+                        <a href="#"
+                            class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Contact</a>
+                    </div>
+                </div>
+-->
+                </div>
+            </nav>
+        </header>
+        <article>
+            {% block content %}{% endblock %}
+        </article>
+    </section>
+    <script>
+
+        const profile = document.getElementById('user-menu-button');
+
+        // Get the dropdown menu element
+        const dropdown = document.getElementById('dropdown');
+
+        // Add a click event listener to the profile element
+        profile.addEventListener('click', () => {
+            // Toggle the visibility of the dropdown menu
+            dropdown.classList.toggle('hidden');
+        });
+
+        let element;
+        let url = window.location.href;
+        let path = url.substring(url.lastIndexOf('/') + 1);
+        let selectedPageClass = "bg-gray-900 text-white";
+        switch(path){
+            case "":
+                element = document.getElementById("homepage")
+                break;
+            case "uploadData":
+                element = document.getElementById("uploadpage")
+                break;
+            case "annotateData":
+                element = document.getElementById("labelpage")
+                break;
+            case "cleanData":
+                element = document.getElementById("cleanpage")
+                break;
+            case "exportData":
+                element = document.getElementById("exportpage")
+                break;
+        }
+
+        if(url.includes("annotateData")) {
+            element = document.getElementById("labelpage")
+        }
+
+        element.classList.remove('text-gray-300')
+        element.classList.remove('hover:bg-gray-700')
+        element.classList.add('text-white')
+        element.classList.toggle('bg-gray-900')
+
+    </script>
+</body>

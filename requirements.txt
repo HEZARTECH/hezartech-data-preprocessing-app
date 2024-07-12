@@ -1,0 +1,13 @@
+# DEPENDENCIES
+Flask
+Werkzeug # And its Flask dependcy ...
+python-dotenv
+flask-cors
+pymongo[srv]
+bcrypt
+pwinput
+pywebview
+requests
+pandas
+openpyxl # Actually it is a dependency of Pandas.
+         # but i put in here for guarantee the requirements.
