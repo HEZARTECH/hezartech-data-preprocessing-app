@@ -84,7 +84,7 @@ $ python desktop.py
 
 ## License
 
-This project is licensed under the Apache 2.0 License. See the [LICENSE](https://github.com/HEZARTECH/hezartech-data-preprocessing-app/blob/master/LICENSE.md) file for details.
+This project is licensed under the Apache 2.0 License. See the [LICENSE](https://github.com/HEZARTECH/hezartech-data-preprocessing-app/blob/main/LICENSE.md) file for details.
 
 ## Recommendation
 
@@ -117,31 +117,31 @@ If you want to look to the important files, here is a list:
 
 ### Login Screen
 
-![Login Screen](https://github.com/HEZARTECH/hezartech-data-preprocessing-app/blob/master/screenshots/login.png)
+![Login Screen](https://github.com/HEZARTECH/hezartech-data-preprocessing-app/blob/main/screenshots/login.png)
 
 ### Index / Homepage Screen
 
-![Homepage Screen](https://github.com/HEZARTECH/hezartech-data-preprocessing-app/blob/master/screenshots/homepage.png)
+![Homepage Screen](https://github.com/HEZARTECH/hezartech-data-preprocessing-app/blob/main/screenshots/homepage.png)
 
 ### Upload Dataset
 
-![Upload Dataset](https://github.com/HEZARTECH/hezartech-data-preprocessing-app/blob/master/screenshots/upload_dataset.png)
+![Upload Dataset](https://github.com/HEZARTECH/hezartech-data-preprocessing-app/blob/main/screenshots/upload_dataset.png)
 
 ### Clean Dataset
 
-![Clean Dataset](https://github.com/HEZARTECH/hezartech-data-preprocessing-app/blob/master/screenshots/clean_dataset.png)
+![Clean Dataset](https://github.com/HEZARTECH/hezartech-data-preprocessing-app/blob/main/screenshots/clean_dataset.png)
 
 ### Label Dataset
 
-![Label Dataset](https://github.com/HEZARTECH/hezartech-data-preprocessing-app/blob/master/screenshots/label_dataset.png)
+![Label Dataset](https://github.com/HEZARTECH/hezartech-data-preprocessing-app/blob/main/screenshots/label_dataset.png)
 
 ### Label Dataset Editor
 
-![Label Dataset Editor](https://github.com/HEZARTECH/hezartech-data-preprocessing-app/blob/master/screenshots/label_dataset_editor.png)
+![Label Dataset Editor](https://github.com/HEZARTECH/hezartech-data-preprocessing-app/blob/main/screenshots/label_dataset_editor.png)
 
 ### Export Dataset
 
-![Export Dataset](https://github.com/HEZARTECH/hezartech-data-preprocessing-app/blob/master/screenshots/export_dataset.png)
+![Export Dataset](https://github.com/HEZARTECH/hezartech-data-preprocessing-app/blob/main/screenshots/export_dataset.png)
 
 
 ## Folder Structure
