@@ -119,7 +119,7 @@ If you want to look to the important files, here is a list:
 
 ![Login Screen](https://github.com/HEZARTECH/hezartech-data-preprocessing-app/blob/master/screenshots/login.png)
 
-### Homepage Screen
+### Index / Homepage Screen
 
 ![Homepage Screen](https://github.com/HEZARTECH/hezartech-data-preprocessing-app/blob/master/screenshots/homepage.png)
 
@@ -189,4 +189,4 @@ If you want to look to the important files, here is a list:
 ├── utils.py # For `app.py`
 └── wsgi.py # Alternate to `app.py` import app variable from `app.py` and run the server.
 ```
-"# hezartech-data-preprocessing-app" 
+"# hezartech-data-preprocessing-app"
