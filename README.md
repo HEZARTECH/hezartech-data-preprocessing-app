@@ -189,4 +189,3 @@ If you want to look to the important files, here is a list:
 ├── utils.py # For `app.py`
 └── wsgi.py # Alternate to `app.py` import app variable from `app.py` and run the server.
 ```
-"# hezartech-data-preprocessing-app"
