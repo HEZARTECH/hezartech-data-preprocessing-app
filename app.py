@@ -428,6 +428,10 @@ def export_data() -> Response:
 
     json_files = remove_file_extensions(json_files)
 
+    for file in json_files:
+        if file in files:
+            files.remove(file)
+
     return login_required_render_template(
         get_template_name('export_data'),
         files = files,

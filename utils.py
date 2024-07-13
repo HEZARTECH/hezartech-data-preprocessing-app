@@ -444,7 +444,7 @@ def json_to_csv(filename: str) -> None | Exception:
                                         or an Exception object if an error occurs.
     """
     df_data = {
-        'index': [],
+        'id': [],
         'text': [],
         'company': [],
         'positive': [],
@@ -463,14 +463,14 @@ def json_to_csv(filename: str) -> None | Exception:
         data = json.load(file)
 
         for i in data:
-            df_data['index'].append(i['page'])
+            df_data['id'].append(i['page'])
             df_data['text'].append(i['text'])
 
             temp_data = {
                 'company': [],
                 'positive': [],
                 'negative': [],
-                'notr':[]
+                'notr': []
             }
             annotations = i['annotations']
 
