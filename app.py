@@ -399,6 +399,30 @@ def get_clean_data(filename: str) -> Response:
     """
     return data_cleaner(filename)
 
+@app.route('/cleanData/deletefile/<string:filename>', methods=['GET'])
+def remove_cleaned_data(filename: str) -> Response:
+    """
+    Route for the '/cleanData/deletefile/<string:filename>' endpoint.
+
+    Retrieves cleaned data from the specified file.
+
+    Args:
+        filename (str): The name of the file to retrieve cleaned data from.
+
+    Returns:
+        Response: The response object containing the deleted data.
+
+    Raises:
+        FileNotFoundError: If the specified file does not exist.
+    """
+    try:
+        path: str = os.path.join(app.config['UPLOAD_FOLDER'], filename)
+        os.remove(path)
+
+        return redirect(url_for('clean_data'))
+
+    except Exception as err:
+        return res.iserr('File cannot be ramoved currently.', err)
 @app.route('/exportData', methods=['GET'])
 def export_data() -> Response:
     """
