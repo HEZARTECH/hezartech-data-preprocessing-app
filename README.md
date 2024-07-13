@@ -61,6 +61,7 @@ $ python app.py
 ```
 
 5. If you want to use as desktop app:
+
 ```sh
 $ python desktop.py
 ```
@@ -77,9 +78,9 @@ $ python desktop.py
 
 ## Features
 
-- Upload a dataset
-- Label the dataset
-- Clean the dataset
+- Upload a data file
+- Clean the data
+- Label the dataset with NER based labelling editor.
 - Export the just claned/cleaned and labeled dataset.
 
 ## License
@@ -97,6 +98,9 @@ If you want to look to the important files, here is a list:
 ./utils.py
 ./desktop.py
 ```
+
+And if you want to try system with example data file.
+You can use the `example_upload_file/TurknetDestek.csv`.
 
 ## Libraries
 
