@@ -64,17 +64,30 @@ function listen_keyboard(event) {
     {
         nextPage();
     }
+    if(key == "q")
+    {
+        prevPage();
+    }
+    if(key == "e")
+    {
+        nextPage();
+    }
   }
 
 bodyElement.onkeydown = listen_keyboard;
 
 function resetForCurrentPage() {
     const selectedSpans = document.querySelectorAll('.selected');
+
     selectedSpans.forEach(span => {
-        const text = span.textContent;
-        const parent = span.parentElement;
-        parent.removeChild(span); // Remove the span element completely
-        parent.appendChild(document.createTextNode(text)); // Append the text node back to the parent
+        spanPage = parseInt(span.getAttribute('data-page'))
+
+        if (currentPage == spanPage){
+            const text = span.textContent;
+            const parent = span.parentElement;
+
+            parent.replaceChild(document.createTextNode(text), span);
+        }
     });
 }
 
