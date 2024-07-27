@@ -105,6 +105,19 @@ document.getElementById('text-container').addEventListener('mouseup', function (
     }
 });
 
+function convertLastSelectedToText() {
+    const selectedSpans = document.querySelectorAll('.selected');
+
+    if (selectedSpans.length > 0) {
+
+        const lastSelected = selectedSpans[selectedSpans.length - 1];
+        const text = lastSelected.textContent;
+        const parent = lastSelected.parentElement;
+        parent.replaceChild(document.createTextNode(text), lastSelected);
+
+    }
+}
+
 function exportSelectedDataAsJSON() {
     const selectedData = getSelectedData();
     const exportObj = {
