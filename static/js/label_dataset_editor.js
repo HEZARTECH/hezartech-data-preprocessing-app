@@ -72,6 +72,11 @@ function listen_keyboard(event) {
     {
         nextPage();
     }
+    if(key == "f")
+    {
+        convertLastSelectedToText();
+    }
+
   }
 
 bodyElement.onkeydown = listen_keyboard;
