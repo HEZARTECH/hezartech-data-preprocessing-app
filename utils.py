@@ -93,7 +93,8 @@ from bson.objectid import ObjectId
 
 # For database connection and dotenv file
 __import__('dotenv').load_dotenv()
-client = pymongo.MongoClient(os.getenv('DB_URI'))
+import certifi
+client = pymongo.MongoClient(os.getenv('DB_URI') + '?retryWrites=true&w=majority', authsource='admin', tlsCAFile=certifi.where())
 db = client.get_database('hezartech')
 
 templates: dict[str, Any] = dict()
