@@ -40,10 +40,10 @@
 
 {% block content %}
 <div class="container mx-auto">
-    
+
     <h1 class="text-white text-3xl font-bold mt-3 mb-4">
     <span>
-        <a href="/annotateDate">
+        <a href="/annotateData">
             <button class="cursor-pointer border-1 border-black bg-green-500 text-white px-4 py-2 rounded">
                 &larr;
             </button>
@@ -63,7 +63,7 @@
     </div>
     <div id="text-container" class="bg-white p-4 border rounded">
       <!-- Multiple text pages -->
-      {% for data in dataset %}  
+      {% for data in dataset %}
       <div class="selectable text-page hidden text-xl" id="page-{{ data['id']}}" data-page="{{ data['id']}}">
         {{ data['text'].replace('\n', '').replace('\\n', '') }}
       </div>
